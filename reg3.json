@@ -6430,10 +6430,11 @@
   },
   {
     "ORIGEN": "Burgos",
-    "DESTINO": "Palencia Con Todas Las Paradas",
+    "DESTINO": "Palencia",
     "CONCESIÓN": "VACL-116",
     "OPERADOR": "Moreno Vicente y Cía, S.L.",
-    "TIPO": "Regular"
+    "TIPO": "Regular",
+    "OBSERVACIONES": "Con Todas Las Paradas"
   },
   {
     "ORIGEN": "Burgos",
@@ -12874,7 +12875,7 @@
   },
   {
     "ORIGEN": "Villanueva De Henares",
-    "DESTINO": "Aguilar De Campo",
+    "DESTINO": "Aguilar De Campoo",
     "CONCESIÓN": "VACL-016",
     "OPERADOR": "Autocares Donato, S.L.",
     "TIPO": "Regular"
