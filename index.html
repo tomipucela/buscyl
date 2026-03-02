@@ -108,6 +108,14 @@
                         <span class="text-[10px] font-black text-slate-400 uppercase tracking-[0.15em]">Operador:</span>
                         <span class="text-lg font-extrabold text-red-600" x-text="rutaRegular.OPERADOR"></span>
                     </div>
+                    <div class="mt-4" x-show="obtenerWebOperadora(rutaRegular.OPERADOR)">
+                        <a :href="obtenerWebOperadora(rutaRegular.OPERADOR)"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="inline-flex items-center px-4 py-2 rounded-xl font-bold bg-slate-900 text-white hover:bg-slate-800 transition-colors shadow-sm text-sm">
+                            Web operadora
+                        </a>
+                    </div>
 
                     <div class="mt-8 pt-6 border-t border-slate-100 flex flex-wrap items-center gap-8">
                         <div class="flex flex-col">
@@ -173,7 +181,18 @@
                     <template x-for="(rutaMetro, indiceRutaMetro) in filtrarMetro" :key="`metro-${indiceRutaMetro}-${rutaMetro.RUTA ?? ''}-${rutaMetro.CONCESIÓN ?? ''}`">
                         <tr class="hover:bg-red-50/30 transition-colors">
                             <td class="p-6 font-extrabold text-slate-800" x-text="rutaMetro.RUTA"></td>
-                            <td class="p-6 text-red-600 font-bold" x-text="rutaMetro.OPERADOR"></td>
+                            <td class="p-6 text-red-600 font-bold">
+                                <div class="flex items-center gap-3">
+                                    <span x-text="rutaMetro.OPERADOR"></span>
+                                    <a x-show="obtenerWebOperadora(rutaMetro.OPERADOR)"
+                                       :href="obtenerWebOperadora(rutaMetro.OPERADOR)"
+                                       target="_blank"
+                                       rel="noopener noreferrer"
+                                       class="inline-flex items-center px-3 py-1 rounded-lg font-bold bg-slate-900 text-white hover:bg-slate-800 transition-colors text-[11px] whitespace-nowrap">
+                                        Web operadora
+                                    </a>
+                                </div>
+                            </td>
                             <td class="p-6 w-52 text-center"><span class="bg-slate-100 text-slate-700 px-4 py-2 rounded-lg text-xs font-mono font-bold whitespace-nowrap" x-text="rutaMetro.CONCESIÓN"></span></td>
                         </tr>
                     </template>

@@ -21,6 +21,14 @@ function transporteApp() {
 				.replace(/ñ/g, 'n');
 		},
 
+		obtenerWebOperadora(nombreOperadora) {
+			if (!nombreOperadora) return '';
+
+			const claveNormalizada = this.normalizar(nombreOperadora).replace(/[^a-z0-9]/g, '');
+			const consulta = encodeURIComponent(`${nombreOperadora} web oficial`);
+			return `https://www.google.com/search?q=${consulta}`;
+		},
+
 		async init() {
 			try {
 				const [rutasRegulares, rutasMetro] = await Promise.all([
@@ -31,6 +39,7 @@ function transporteApp() {
 				this.datos = Array.isArray(rutasRegulares) ? rutasRegulares : [];
 				this.datosMetro = Array.isArray(rutasMetro) ? rutasMetro : [];
 				window.verOrigenesDisponibles = () => this.mostrarOrigenesEnConsola();
+				window.verOperadorasDisponibles = () => this.mostrarOperadorasEnConsola();
 			} catch (error) {
 				console.error('Error cargando archivos JSON', error);
 				this.datos = [];
@@ -49,6 +58,22 @@ function transporteApp() {
 			console.log(`Orígenes disponibles: ${origenes.length}`);
 			console.table(origenes.map(origen => ({ origen })));
 			return origenes;
+		},
+
+		obtenerOperadorasDisponibles() {
+			const operadorasRegulares = this.datos.map(ruta => ruta.OPERADOR);
+			const operadorasMetro = this.datosMetro.map(ruta => ruta.OPERADOR);
+
+			return [...new Set([...operadorasRegulares, ...operadorasMetro])]
+				.filter(operadora => operadora && operadora.trim() !== '')
+				.sort((a, b) => a.localeCompare(b, 'es'));
+		},
+
+		mostrarOperadorasEnConsola() {
+			const operadoras = this.obtenerOperadorasDisponibles();
+			console.log(`Operadoras disponibles: ${operadoras.length}`);
+			console.table(operadoras.map(operadora => ({ operadora })));
+			return operadoras;
 		},
 
 		resetInputs() {
