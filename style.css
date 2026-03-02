@@ -1,0 +1,6 @@
+body { font-family: 'Plus Jakarta Sans', sans-serif; }
+.glass-card { background: white; border: 1px solid #f1f5f9; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05); }
+.sug-container { max-height: 250px; overflow-y: auto !important; }
+.sug-container::-webkit-scrollbar { width: 6px; }
+.sug-container::-webkit-scrollbar-thumb { background: #ef4444; border-radius: 10px; }
+.selected-item { background-color: #fef2f2; border-left: 5px solid #dc2626; }
