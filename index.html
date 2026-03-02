@@ -14,14 +14,8 @@
 
 <div class="max-w-6xl mx-auto px-4 py-12" x-data="transporteApp()">
     
-    <div class="mb-12 relative">
+    <div class="mb-12">
         <h1 @click="window.location.reload()" title="Pulsa para recargar" class="text-5xl font-extrabold tracking-tighter italic cursor-pointer select-none text-center">Buscador<span class="text-red-600">Bus</span> <span class="font-light text-slate-400">CYL</span></h1>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWl5LFYyKdzRYbGhfD2cqrTaLALuA4et41IX_ocKeySjWX1g/viewform?usp=publish-editor"
-           target="_blank"
-           rel="noopener noreferrer"
-           class="inline-flex items-center px-4 py-2 rounded-xl font-bold bg-slate-900 text-white hover:bg-slate-800 transition-colors shadow-sm text-sm absolute right-0 top-1/2 -translate-y-1/2">
-            Reportar fallo o sugerencia
-        </a>
     </div>
     <div class="max-w-3xl mx-auto mb-8">
         <div class="bg-red-50 border-l-4 border-red-600 p-4 rounded-r-2xl shadow-sm flex items-start gap-4">
@@ -30,11 +24,21 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
             </div>
-            <p class="text-sm text-red-900 leading-relaxed">
-                <span class="font-black uppercase tracking-tighter">Aviso Importante:</span> 
-                Si no encuentras rutas entre capitales de provincia y municipios cercanos en esta sección, por favor consulta la pestaña de 
-                <button @click="tab = 'metro'; resetInputs()" class="font-bold underline decoration-red-300 hover:text-red-600 transition-colors">Rutas Metropolitanas</button>.
-            </p>
+            <div class="flex-1">
+                <p class="text-sm text-red-900 leading-relaxed">
+                    <span class="font-black uppercase tracking-tighter">Aviso Importante:</span> 
+                    Si no encuentras rutas entre capitales de provincia y municipios cercanos en esta sección, por favor consulta la pestaña de 
+                    <button @click="tab = 'metro'; resetInputs()" class="font-bold underline decoration-red-300 hover:text-red-600 transition-colors">Rutas Metropolitanas</button>.
+                </p>
+            </div>
+        </div>
+        <div class="flex justify-center mt-4">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWl5LFYyKdzRYbGhfD2cqrTaLALuA4et41IX_ocKeySjWX1g/viewform?usp=publish-editor"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="inline-flex items-center px-4 py-2 rounded-xl font-bold bg-slate-900 text-white hover:bg-slate-800 transition-colors shadow-sm text-sm whitespace-nowrap">
+                Reportar fallo o sugerencia
+            </a>
         </div>
     </div>
 
@@ -177,6 +181,7 @@
             </table>
         </div>
     </div>
+
 </div>
 <script src="script.js"></script>
 </body>
