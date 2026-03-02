@@ -30,11 +30,25 @@ function transporteApp() {
 
 				this.datos = Array.isArray(rutasRegulares) ? rutasRegulares : [];
 				this.datosMetro = Array.isArray(rutasMetro) ? rutasMetro : [];
+				window.verOrigenesDisponibles = () => this.mostrarOrigenesEnConsola();
 			} catch (error) {
 				console.error('Error cargando archivos JSON', error);
 				this.datos = [];
 				this.datosMetro = [];
 			}
+		},
+
+		obtenerOrigenesDisponibles() {
+			return [...new Set(this.datos.map(ruta => ruta.ORIGEN))]
+				.filter(origen => origen && origen.trim() !== '')
+				.sort((a, b) => a.localeCompare(b));
+		},
+
+		mostrarOrigenesEnConsola() {
+			const origenes = this.obtenerOrigenesDisponibles();
+			console.log(`Orígenes disponibles: ${origenes.length}`);
+			console.table(origenes.map(origen => ({ origen })));
+			return origenes;
 		},
 
 		resetInputs() {

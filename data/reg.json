@@ -1616,7 +1616,7 @@
   },
   {
     "ORIGEN": "Espejón",
-    "DESTINO": "San Leonardo De Yagüe Ii",
+    "DESTINO": "San Leonardo De Yagüe",
     "CONCESIÓN": "AECL-083",
     "OPERADOR": "Hijos de Ángel Arribas, S.L.U.",
     "TIPO": "Regular"
@@ -2431,13 +2431,6 @@
   {
     "ORIGEN": "Campo De Cuéllar",
     "DESTINO": "Segovia",
-    "CONCESIÓN": "VACL-126",
-    "OPERADOR": "Linecar, S.A.",
-    "TIPO": "Regular"
-  },
-  {
-    "ORIGEN": "Segovia – Cuéllar",
-    "DESTINO": "Valladolid",
     "CONCESIÓN": "VACL-126",
     "OPERADOR": "Linecar, S.A.",
     "TIPO": "Regular"
@@ -8464,7 +8457,8 @@
     "TIPO": "Regular"
   },
   {
-    "ORIGEN": "Oteros De Boedo Herrera De Pisuerga",
+    "ORIGEN": "Oteros De Boedo",
+    "DESTINO": "Herrera De Pisuerga",
     "CONCESIÓN": "VACL-038",
     "OPERADOR": "Linecar, S.A.",
     "TIPO": "Regular",
@@ -10553,7 +10547,7 @@
   },
   {
     "ORIGEN": "Montuenga",
-    "DESTINO": "Arévalo Ii",
+    "DESTINO": "Arévalo",
     "CONCESIÓN": "VACL-123",
     "OPERADOR": "Linecar, S.A.",
     "TIPO": "Regular"
@@ -12044,7 +12038,7 @@
     "TIPO": "Regular"
   },
   {
-    "ORIGEN": "Barcial De La Loma Ii",
+    "ORIGEN": "Barcial De La Loma",
     "DESTINO": "Valderas",
     "CONCESIÓN": "VACL-038",
     "OPERADOR": "Linecar, S.A.",
@@ -12198,7 +12192,7 @@
     "TIPO": "Regular"
   },
   {
-    "ORIGEN": "Quintana& Congosto",
+    "ORIGEN": "Quintana Y Congosto",
     "DESTINO": "La Bañeza",
     "CONCESIÓN": "VACL-094",
     "OPERADOR": "Autocares Castilla y León, S.A.U.",
@@ -12557,7 +12551,7 @@
     "TIPO": "Regular"
   },
   {
-    "ORIGEN": "Trobajo Del Camino Ii",
+    "ORIGEN": "Trobajo Del Camino",
     "DESTINO": "San Andrés Del Rabanedo",
     "CONCESIÓN": "VACL-161",
     "OPERADOR": "Autocares Castilla y León, S.A.U.",
@@ -12676,7 +12670,7 @@
     "TIPO": "Regular"
   },
   {
-    "ORIGEN": "Santibañez De La Isla",
+    "ORIGEN": "Santibáñez De La Isla",
     "DESTINO": "Veguellina De Órbigo",
     "CONCESIÓN": "AECL-107",
     "OPERADOR": "Blas Fernández, S.L.",
@@ -13464,7 +13458,7 @@
     "TIPO": "Regular"
   },
   {
-    "ORIGEN": "Montemayor Del Rio",
+    "ORIGEN": "Montemayor Del Río",
     "DESTINO": "Béjar",
     "CONCESIÓN": "AECL-075",
     "OPERADOR": "Justo Pérez Gómez",
@@ -13555,7 +13549,7 @@
     "TIPO": "Regular"
   },
   {
-    "ORIGEN": "La Alberguería De Argañan",
+    "ORIGEN": "La Alberguería De Argañán",
     "DESTINO": "Ciudad Rodrigo",
     "CONCESIÓN": "VACL-058",
     "OPERADOR": "J.J. Martín Gallego, S.L.",
@@ -14252,7 +14246,7 @@
     "TIPO": "Regular"
   },
   {
-    "ORIGEN": "Fuente Del Olmo De Fuentidueña",
+    "ORIGEN": "Fuente El Olmo De Fuentidueña",
     "DESTINO": "Cantalejo",
     "CONCESIÓN": "VACL-125",
     "OPERADOR": "Linecar, S.A.",
@@ -14357,7 +14351,7 @@
     "TIPO": "Regular"
   },
   {
-    "ORIGEN": "Martin Muñoz De Las Posadas",
+    "ORIGEN": "Martín Muñoz De Las Posadas",
     "DESTINO": "Sta. Mª La Real De Nieva",
     "CONCESIÓN": "VACL-123",
     "OPERADOR": "Linecar, S.A.",
@@ -14884,7 +14878,7 @@
   },
   {
     "ORIGEN": "Tordesillas",
-    "DESTINO": "Tordesillas Ii",
+    "DESTINO": "Tordesillas",
     "CONCESIÓN": "VACL-053",
     "OPERADOR": "La Regional Vallisoletana, S.A.",
     "TIPO": "Regular"
@@ -14932,7 +14926,7 @@
     "TIPO": "Regular"
   },
   {
-    "ORIGEN": "Villalba De Los Alcores Ii",
+    "ORIGEN": "Villalba De Los Alcores",
     "DESTINO": "Medina De Rioseco",
     "CONCESIÓN": "VACL-038",
     "OPERADOR": "Linecar, S.A.",
@@ -15038,7 +15032,7 @@
     "TIPO": "Regular"
   },
   {
-    "ORIGEN": "Sieteiglesias De Trabancos",
+    "ORIGEN": "Siete Iglesias De Trabancos",
     "DESTINO": "Tordesillas",
     "CONCESIÓN": "VACL-053",
     "OPERADOR": "La Regional Vallisoletana, S.A.",
@@ -15276,7 +15270,7 @@
     "TIPO": "Regular"
   },
   {
-    "ORIGEN": "Valdestillas Ii",
+    "ORIGEN": "Valdestillas",
     "DESTINO": "Valladolid",
     "CONCESIÓN": "VACL-053",
     "OPERADOR": "La Regional Vallisoletana, S.A.",
@@ -15312,7 +15306,7 @@
     "TIPO": "Regular"
   },
   {
-    "ORIGEN": "Castrejón De Trabarcos",
+    "ORIGEN": "Castrejón De Trabancos",
     "DESTINO": "Carpio",
     "CONCESIÓN": "VACL-053",
     "OPERADOR": "La Regional Vallisoletana, S.A.",
@@ -15719,7 +15713,7 @@
     "TIPO": "Regular"
   },
   {
-    "ORIGEN": "Calabor Ii",
+    "ORIGEN": "Calabor",
     "DESTINO": "Puebla De Sanabria",
     "CONCESIÓN": "VACL-150",
     "OPERADOR": "Autos Álvarez de Viajeros, S.L.",
@@ -16104,7 +16098,7 @@
     "TIPO": "Regular"
   },
   {
-    "ORIGEN": "Fornillos De Fermosellle",
+    "ORIGEN": "Fornillos De Fermoselle",
     "DESTINO": "Bermillo De Sayago",
     "CONCESIÓN": "VACL-090",
     "OPERADOR": "Herederos de A. Tamame, S.A.",
@@ -18070,8 +18064,8 @@
     "TIPO": "Regular"
   },
   {
-    "ORIGEN": "El Barco De Avila",
-    "DESTINO": "Avila",
+    "ORIGEN": "El Barco De Ávila",
+    "DESTINO": "Ávila",
     "CONCESIÓN": "VACL-149",
     "OPERADOR": "Muñoz travel , S.L.",
     "TIPO": "Regular"
