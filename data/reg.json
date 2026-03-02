@@ -13486,21 +13486,7 @@
     "TIPO": "Regular"
   },
   {
-    "ORIGEN": "Sancti",
-    "DESTINO": "Spiritus",
-    "CONCESIÓN": "VACL-029",
-    "OPERADOR": "Empresa de Automóviles El Pilar, S.A.",
-    "TIPO": "Regular"
-  },
-  {
-    "ORIGEN": "Sancti",
-    "DESTINO": "Ciudad Rodrigo",
-    "CONCESIÓN": "VACL-029",
-    "OPERADOR": "Empresa de Automóviles El Pilar, S.A.",
-    "TIPO": "Regular"
-  },
-  {
-    "ORIGEN": "Spiritus",
+    "ORIGEN": "Sancti-Spiritus",
     "DESTINO": "Ciudad Rodrigo",
     "CONCESIÓN": "VACL-029",
     "OPERADOR": "Empresa de Automóviles El Pilar, S.A.",
@@ -13712,21 +13698,7 @@
   },
   {
     "ORIGEN": "Dios Le Guarde",
-    "DESTINO": "Sancti",
-    "CONCESIÓN": "VACL-072",
-    "OPERADOR": "Viagón Autocares, S.L.",
-    "TIPO": "Regular"
-  },
-  {
-    "ORIGEN": "Dios Le Guarde",
-    "DESTINO": "Spiritus",
-    "CONCESIÓN": "VACL-072",
-    "OPERADOR": "Viagón Autocares, S.L.",
-    "TIPO": "Regular"
-  },
-  {
-    "ORIGEN": "Sancti",
-    "DESTINO": "Spiritus",
+    "DESTINO": "Sancti-Spiritus",
     "CONCESIÓN": "VACL-072",
     "OPERADOR": "Viagón Autocares, S.L.",
     "TIPO": "Regular"
