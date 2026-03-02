@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador Buscyl</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23dc2626'/%3E%3Ctext x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-size='34' font-family='Arial' fill='white'%3EB%3C/text%3E%3C/svg%3E">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glass-card { background: white; border: 1px solid #f1f5f9; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05); }
+        .sug-container { max-height: 250px; overflow-y: auto !important; }
+        .sug-container::-webkit-scrollbar { width: 6px; }
+        .sug-container::-webkit-scrollbar-thumb { background: #ef4444; border-radius: 10px; }
+        .selected-item { background-color: #fef2f2; border-left: 5px solid #dc2626; }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen text-slate-900 pb-20">
+
+<div class="max-w-6xl mx-auto px-4 py-12" x-data="transporteApp()">
+    
+    <div class="text-center mb-12">
+        <div class="flex justify-center mb-4">
+        </div>
+        <h1 class="text-5xl font-extrabold tracking-tighter italic">Buscador<span class="text-red-600">Bus</span> <span class="font-light text-slate-400">CYL</span></h1>
+    </div>
+
+    <div class="flex justify-center mb-10">
+        <div class="inline-flex p-1.5 bg-white rounded-2xl shadow-sm border border-slate-200">
+            <button @click="tab = 'regulares'; resetInputs()" :class="tab === 'regulares' ? 'bg-red-600 text-white shadow-lg' : 'text-slate-500 hover:bg-slate-50'" class="px-8 py-3 rounded-xl font-bold transition-all duration-300">Rutas Regulares</button>
+            <button @click="tab = 'metro'; resetInputs()" :class="tab === 'metro' ? 'bg-red-600 text-white shadow-lg' : 'text-slate-500 hover:bg-slate-50'" class="px-8 py-3 rounded-xl font-bold transition-all duration-300">Metropolitanas</button>
+        </div>
+    </div>
+
+    <div x-show="tab === 'regulares'" x-transition>
+        <div class="grid md:grid-cols-2 gap-6 mb-12">
+            <div class="relative">
+                <label class="block text-xs font-black text-red-600 uppercase tracking-widest mb-2 ml-2">Origen</label>
+                <input type="text" x-model="qOrigen" 
+                    @focus="buscarSugerencias('origen')"
+                    @input="buscarSugerencias('origen')"
+                    @keydown.arrow-down.prevent="navIndex('origen', 1)"
+                    @keydown.arrow-up.prevent="navIndex('origen', -1)"
+                    @keydown.enter.prevent="seleccionarConEnter('origen')"
+                    placeholder="¿De dónde sales?" 
+                    class="w-full p-5 rounded-2xl border border-slate-200 shadow-sm focus:ring-4 focus:ring-red-100 focus:border-red-400 outline-none transition text-lg bg-white">
+                
+                <div x-show="sugOrigen.length > 0" class="absolute z-50 w-full mt-2 bg-white rounded-2xl shadow-2xl border border-slate-100 sug-container">
+                    <template x-for="(s, index) in sugOrigen" :key="`origen-${index}-${s ?? ''}`">
+                        <div @click="seleccionar('origen', s)" 
+                            :class="{'selected-item': index === selectedIndex}"
+                            class="p-4 hover:bg-red-50 cursor-pointer border-b border-slate-50 last:border-0 transition-colors" 
+                            x-text="s"></div>
+                    </template>
+                </div>
+            </div>
+
+            <div class="relative">
+                <label class="block text-xs font-black text-red-600 uppercase tracking-widest mb-2 ml-2">Destino</label>
+                <input type="text" x-model="qDestino" x-ref="inputDestino"
+                    @focus="buscarSugerencias('destino')"
+                    @input="buscarSugerencias('destino')" 
+                    @keydown.arrow-down.prevent="navIndex('destino', 1)"
+                    @keydown.arrow-up.prevent="navIndex('destino', -1)"
+                    @keydown.enter.prevent="seleccionarConEnter('destino')"
+                    :disabled="!qOrigen" 
+                    placeholder="¿A dónde vas?" 
+                    class="w-full p-5 rounded-2xl border border-slate-200 shadow-sm focus:ring-4 focus:ring-red-100 focus:border-red-400 outline-none transition text-lg bg-white disabled:bg-slate-50 disabled:opacity-60">
+                
+                <div x-show="sugDestino.length > 0" class="absolute z-50 w-full mt-2 bg-white rounded-2xl shadow-2xl border border-slate-100 sug-container">
+                    <template x-for="(s, index) in sugDestino" :key="`destino-${index}-${s ?? ''}`">
+                        <div @click="seleccionar('destino', s)" 
+                            :class="{'selected-item': index === selectedIndex}"
+                            class="p-4 hover:bg-red-50 cursor-pointer border-b border-slate-50 last:border-0 transition-colors" 
+                            x-text="s"></div>
+                    </template>
+                </div>
+            </div>
+        </div>
+
+<div class="space-y-8">
+    <template x-for="(r, index) in filtrarRegulares" :key="`reg-${index}-${r.CONCESIÓN ?? ''}-${r.ORIGEN ?? ''}-${r.DESTINO ?? ''}`">
+        <div class="glass-card p-10 rounded-[2.5rem] border-l-[12px] border-l-red-600 transition-all hover:shadow-2xl hover:shadow-red-100/50">
+            <div class="flex flex-col lg:flex-row gap-10 items-start">
+                <div class="flex-1">
+                    <h2 class="text-4xl font-extrabold text-slate-800 mb-4 leading-tight tracking-tighter" x-text="r.ORIGEN + ' ➔ ' + r.DESTINO"></h2>
+                    
+                    <div class="flex items-center gap-3 py-3 px-5 bg-slate-50 rounded-2xl inline-flex border border-slate-100">
+                        <div class="w-2 h-2 rounded-full bg-red-600 animate-pulse"></div>
+                        <span class="text-[10px] font-black text-slate-400 uppercase tracking-[0.15em]">Operador:</span>
+                        <span class="text-lg font-extrabold text-red-600" x-text="r.OPERADOR"></span>
+                    </div>
+
+                    <div class="mt-8 pt-6 border-t border-slate-100 flex flex-wrap items-center gap-8">
+                        <div class="flex flex-col">
+                            <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Modalidad</span>
+                            <span class="text-sm font-black text-slate-700 uppercase italic" x-text="r.TIPO"></span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Concesión</span>
+                            <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-lg text-[11px] font-bold font-mono border border-slate-200 w-fit" x-text="r.CONCESIÓN"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:w-80 w-full" x-show="r.OBSERVACIONES && r.OBSERVACIONES.trim() !== ''">
+                    <div class="bg-red-50/50 p-8 rounded-[2rem] border border-red-100 relative overflow-hidden h-full min-h-[120px] flex flex-col justify-center">
+                        <div class="absolute -right-4 -top-4 w-20 h-20 bg-red-100/30 rounded-full blur-2xl"></div>
+                        
+                        <h3 class="text-[10px] font-black text-red-700 uppercase tracking-[0.2em] mb-3 italic flex items-center gap-2">
+                            Observaciones
+                        </h3>
+                        <p class="text-slate-700 text-sm leading-relaxed font-bold italic" x-text="r.OBSERVACIONES"></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </template>
+</div>
+    </div>
+
+    <div x-show="tab === 'metro'" x-transition>
+        <div class="max-w-md mx-auto mb-12 relative">
+            <label class="block text-center text-xs font-black text-red-600 uppercase tracking-widest mb-4">Provincia</label>
+            <input type="text" x-model="qProvincia" 
+                @focus="buscarProvincia()"
+                @input="buscarProvincia()" 
+                @keydown.arrow-down.prevent="navIndex('provincia', 1)"
+                @keydown.arrow-up.prevent="navIndex('provincia', -1)"
+                @keydown.enter.prevent="seleccionarConEnter('provincia')"
+                placeholder="Ej: Valladolid, León..." 
+                class="w-full p-5 rounded-2xl border border-slate-200 shadow-sm focus:ring-4 focus:ring-red-100 text-center text-lg bg-white outline-none">
+            
+            <div x-show="sugProvincia.length > 0" class="absolute z-50 w-full mt-2 bg-white rounded-2xl shadow-2xl border border-slate-100 sug-container">
+                <template x-for="(p, index) in sugProvincia" :key="`prov-${index}-${p ?? ''}`">
+                    <div @click="seleccionarProvincia(p)" 
+                        :class="{'selected-item': index === selectedIndex}"
+                        class="p-4 hover:bg-red-50 cursor-pointer text-center transition-colors border-b border-slate-50 last:border-0" x-text="p"></div>
+                </template>
+            </div>
+        </div>
+
+        <div x-show="filtrarMetro.length > 0" class="bg-white rounded-[2.5rem] shadow-xl overflow-hidden border border-slate-200">
+            <table class="w-full">
+                <thead class="bg-slate-900 text-white">
+                    <tr>
+                        <th class="p-6 text-left text-[10px] font-black uppercase tracking-widest">Ruta Metropolitana</th>
+                        <th class="p-6 text-left text-[10px] font-black uppercase tracking-widest">Operador</th>
+                        <th class="p-6 text-center text-[10px] font-black uppercase tracking-widest">Concesión</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100">
+                    <template x-for="(m, index) in filtrarMetro" :key="`metro-${index}-${m.RUTA ?? ''}-${m.CONCESIÓN ?? ''}`">
+                        <tr class="hover:bg-red-50/30 transition-colors">
+                            <td class="p-6 font-extrabold text-slate-800" x-text="m.RUTA"></td>
+                            <td class="p-6 text-red-600 font-bold" x-text="m.OPERADOR"></td>
+                            <td class="p-6 text-center"><span class="bg-slate-100 text-slate-700 px-4 py-2 rounded-lg text-xs font-mono font-bold" x-text="m.CONCESIÓN"></span></td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script>
+function transporteApp() {
+    return {
+        tab: 'regulares',
+        datos: [],
+        datosMetro: [],
+        qOrigen: '', qDestino: '', qProvincia: '',
+        sugOrigen: [], sugDestino: [], sugProvincia: [],
+        selectedIndex: -1,
+
+        normalizar(texto) {
+            if (!texto) return "";
+            return String(texto)
+                .toLowerCase()
+                .trim()
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "")
+                .replace(/ñ/g, "n");
+        },
+
+        async init() {
+            try {
+                const [r1, r2] = await Promise.all([
+                    fetch('regsd.json').then(res => res.json()),
+                    fetch('metrop.json').then(res => res.json())
+                ]);
+                this.datos = Array.isArray(r1) ? r1 : [];
+                this.datosMetro = Array.isArray(r2) ? r2 : [];
+            } catch (e) { 
+                console.error("Error cargando archivos JSON"); 
+                this.datos = []; this.datosMetro = [];
+            }
+        },
+
+        resetInputs() {
+            this.qOrigen = ''; this.qDestino = ''; this.qProvincia = '';
+            this.sugOrigen = []; this.sugDestino = []; this.sugProvincia = [];
+            this.selectedIndex = -1;
+        },
+
+        buscarSugerencias(tipo) {
+            this.selectedIndex = -1;
+            const query = this.normalizar(tipo === 'origen' ? this.qOrigen : this.qDestino);
+            
+            if(tipo === 'origen') {
+                // Solo extraemos nombres de localidades, ignorando cualquier otro campo como observaciones
+                const puntos = [...new Set(this.datos.flatMap(d => [d.ORIGEN, d.DESTINO]))]
+                                .filter(p => p && p.trim() !== "");
+                
+                this.sugOrigen = query.length < 1 
+                    ? puntos.sort((a, b) => a.localeCompare(b)) 
+                    : puntos.filter(p => this.normalizar(p).includes(query)).sort((a, b) => a.localeCompare(b));
+            } else {
+                const o = this.normalizar(this.qOrigen);
+                // Filtramos destinos que tengan conexión con el origen seleccionado, solo nombres
+                const destinos = [...new Set(
+                    this.datos.filter(d => {
+                        return d.ORIGEN && d.DESTINO && 
+                               (this.normalizar(d.ORIGEN) === o || this.normalizar(d.DESTINO) === o);
+                    }).map(d => this.normalizar(d.ORIGEN) === o ? d.DESTINO : d.ORIGEN)
+                )].filter(p => p && p.trim() !== "");
+
+                this.sugDestino = query.length < 1 
+                    ? destinos.sort((a, b) => a.localeCompare(b)) 
+                    : destinos.filter(p => this.normalizar(p).includes(query)).sort((a, b) => a.localeCompare(b));
+            }
+        },
+
+        buscarProvincia() {
+            this.selectedIndex = -1;
+            const query = this.normalizar(this.qProvincia);
+            const provs = [...new Set(this.datosMetro.map(d => d.PROVINCIA))].filter(p => p);
+            this.sugProvincia = query.length < 1 
+                ? provs.sort() 
+                : provs.filter(p => this.normalizar(p).includes(query)).sort();
+        },
+
+        seleccionarProvincia(p) {
+            this.qProvincia = p; this.sugProvincia = []; this.selectedIndex = -1;
+        },
+
+        navIndex(tipo, dir) {
+            const list = tipo === 'origen' ? this.sugOrigen : (tipo === 'destino' ? this.sugDestino : this.sugProvincia);
+            if (list.length === 0) return;
+            
+            // Actualizamos el índice
+            this.selectedIndex = (this.selectedIndex + dir + list.length) % list.length;
+
+            // Forzamos el scroll al elemento seleccionado
+            this.$nextTick(() => {
+                const container = document.querySelector('.sug-container:not([style*="display: none"])');
+                if (container) {
+                    const selected = container.querySelector('.selected-item');
+                    if (selected) {
+                        selected.scrollIntoView({
+                            block: 'nearest', // Lo mueve solo lo necesario para que sea visible
+                            behavior: 'smooth' // Movimiento fluido
+                        });
+                    }
+                }
+            });
+        },
+
+        seleccionarConEnter(tipo) {
+            const list = tipo === 'origen' ? this.sugOrigen : (tipo === 'destino' ? this.sugDestino : this.sugProvincia);
+            if (this.selectedIndex >= 0 && list[this.selectedIndex]) {
+                if(tipo === 'provincia') this.seleccionarProvincia(list[this.selectedIndex]);
+                else this.seleccionar(tipo, list[this.selectedIndex]);
+            }
+        },
+
+        seleccionar(tipo, valor) {
+            if(tipo === 'origen') { 
+                this.qOrigen = valor; this.sugOrigen = []; this.qDestino = ''; this.selectedIndex = -1;
+                this.$nextTick(() => { if(this.$refs.inputDestino) this.$refs.inputDestino.focus(); });
+            } else { 
+                this.qDestino = valor; this.sugDestino = []; this.selectedIndex = -1; 
+            }
+        },
+
+        get filtrarRegulares() {
+            if(!this.qOrigen || !this.qDestino || this.datos.length === 0) return [];
+            
+            const oBusqueda = this.normalizar(this.qOrigen);
+            const dBusqueda = this.normalizar(this.qDestino);
+            
+            return this.datos
+                .filter(r => {
+                    if (!r.ORIGEN || !r.DESTINO) return false;
+                    const rOr = this.normalizar(r.ORIGEN);
+                    const rDe = this.normalizar(r.DESTINO);
+                    // Mantenemos el filtro de ambos sentidos
+                    return (rOr === oBusqueda && rDe === dBusqueda) || (rOr === dBusqueda && rDe === oBusqueda);
+                })
+                .sort((a, b) => {
+                    // Lógica de ordenación:
+                    const aEsDirecto = (this.normalizar(a.ORIGEN) === oBusqueda && this.normalizar(a.DESTINO) === dBusqueda);
+                    const bEsDirecto = (this.normalizar(b.ORIGEN) === oBusqueda && this.normalizar(b.DESTINO) === dBusqueda);
+
+                    if (aEsDirecto && !bEsDirecto) return -1; // 'a' va arriba
+                    if (!aEsDirecto && bEsDirecto) return 1;  // 'b' va arriba
+                    return 0; // Si ambos son del mismo sentido, se quedan como están
+                });
+        },
+
+        get filtrarMetro() {
+            if(!this.qProvincia || this.datosMetro.length === 0) return [];
+            const pBusqueda = this.normalizar(this.qProvincia);
+            return this.datosMetro.filter(m => m.PROVINCIA && this.normalizar(m.PROVINCIA) === pBusqueda);
+        }
+    }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,429 @@
+[
+  {
+    "RUTA": "M1 Burgos - Villariezo - Arcos - Villagonzalo- Pedernales - Burgos",
+    "CONCESIÓN": "VACL-004",
+    "OPERADOR": "Autobuses de Castilla, S.L."
+  },
+  {
+    "RUTA": "M2 Burgos - Albillos - Cavia - Cayuela - Buniel - San Mamés De Burgos - Burgos",
+    "CONCESIÓN": "VACL-004",
+    "OPERADOR": "Autobuses de Castilla, S.L."
+  },
+  {
+    "RUTA": "M3 Villalbilla De Burgos - Burgos",
+    "CONCESIÓN": "VACL-075",
+    "OPERADOR": "Guerrero Bus, S.L."
+  },
+  {
+    "RUTA": "M4 Villarmero - Burgos",
+    "CONCESIÓN": "VACL-019",
+    "OPERADOR": "Autobuses del Pisuerga, S.L."
+  },
+  {
+    "RUTA": "M5 Burgos - Ubierna",
+    "CONCESIÓN": "VACL-001",
+    "OPERADOR": "Autocares Castilla y León, S.A.U."
+  },
+  {
+    "RUTA": "M7 Burgos - Ibeas De Juarros",
+    "CONCESIÓN": "VACL-001",
+    "OPERADOR": "Autocares Castilla y León, S.A.U."
+  },
+  {
+    "RUTA": "M8-1 Burgos - Burgos",
+    "CONCESIÓN": "VACL-010",
+    "OPERADOR": "Autocares Arceredillo, S.L.",
+    "OBSERVACIONES": "circular por Castrillo del Val"
+  },
+  {
+    "RUTA": "M8-2 Burgos - Burgos",
+    "CONCESIÓN": "VACL-010",
+    "OPERADOR": "Autocares Arceredillo, S.L.",
+    "OBSERVACIONES": "circular por Carcedo"
+  },
+  {
+    "RUTA": "M9 Burgos - Sarracín - Saldaña De Burgos - Modúbar De La Emparedada - Revillarruz - Burgos",
+    "CONCESIÓN": "VACL-007",
+    "OPERADOR": "Autocares Arceredillo, S.L."
+  },
+  {
+    "RUTA": "M1 A Santo Domingo - La Virgen Del Camino - Aeropuerto",
+    "CONCESIÓN": "VACL-115",
+    "OPERADOR": "Transportes Adaptados Regionales, S.L.U."
+  },
+  {
+    "RUTA": "M1 B Santo Domingo - La Raya",
+    "CONCESIÓN": "VACL-115",
+    "OPERADOR": "Transportes Adaptados Regionales, S.L.U."
+  },
+  {
+    "RUTA": "M1 C Santo Domingo - Ezpeleta",
+    "CONCESIÓN": "VACL-115",
+    "OPERADOR": "Transportes Adaptados Regionales, S.L.U."
+  },
+  {
+    "RUTA": "M2 Gran Vía De San Marcos - Villabalter",
+    "CONCESIÓN": "VACL-115",
+    "OPERADOR": "Transportes Adaptados Regionales, S.L.U."
+  },
+  {
+    "RUTA": "M3 A Santo Domingo-Villaobispo De Las Regueras",
+    "CONCESIÓN": "VACL-115",
+    "OPERADOR": "Transportes Adaptados Regionales, S.L.U."
+  },
+  {
+    "RUTA": "M3 B Santo Domingo-Villamoros De Las Regueras",
+    "CONCESIÓN": "VACL-115",
+    "OPERADOR": "Transportes Adaptados Regionales, S.L.U."
+  },
+  {
+    "RUTA": "M3 C Padre Isla - Villanueva - Castrillino",
+    "CONCESIÓN": "VACL-115",
+    "OPERADOR": "Transportes Adaptados Regionales, S.L.U."
+  },
+  {
+    "RUTA": "M3 C Villanueva Del Árbol - León",
+    "CONCESIÓN": "VACL-115",
+    "OPERADOR": "Transportes Adaptados Regionales, S.L.U."
+  },
+  {
+    "RUTA": "M4 Gran Via De San Marcos-Lorenzana",
+    "CONCESIÓN": "VACL-115",
+    "OPERADOR": "Transportes Adaptados Regionales, S.L.U."
+  },
+  {
+    "RUTA": "M5 Gran Via De San Marcos-Cuadros",
+    "CONCESIÓN": "VACL-115",
+    "OPERADOR": "Transportes Adaptados Regionales, S.L.U."
+  },
+  {
+    "RUTA": "M6 A Santo Domingo - Navatejera",
+    "CONCESIÓN": "VACL-115",
+    "OPERADOR": "Transportes Adaptados Regionales, S.L.U."
+  },
+  {
+    "RUTA": "M6 B Santo Domingo - Altollano",
+    "CONCESIÓN": "VACL-115",
+    "OPERADOR": "Transportes Adaptados Regionales, S.L.U."
+  },
+  {
+    "RUTA": "M7 San Andrés - Campus",
+    "CONCESIÓN": "VACL-115",
+    "OPERADOR": "Transportes Adaptados Regionales, S.L.U."
+  },
+  {
+    "RUTA": "M8 Padre Isla - Monteleón - Carbajal",
+    "CONCESIÓN": "VACL-115",
+    "OPERADOR": "Transportes Adaptados Regionales, S.L.U."
+  },
+  {
+    "RUTA": "M9 Gran Vía - Pinilla - Gran Vía",
+    "CONCESIÓN": "VACL-115",
+    "OPERADOR": "Transportes Adaptados Regionales, S.L.U."
+  },
+  {
+    "RUTA": "M10 Gran Vía - Ferral - Montejos Del Camino",
+    "CONCESIÓN": "VACL-115",
+    "OPERADOR": "Transportes Adaptados Regionales, S.L.U."
+  },
+  {
+    "RUTA": "M10 B Gran Vía - Ferral - Montejos Del Camino",
+    "CONCESIÓN": "VACL-115",
+    "OPERADOR": "Transportes Adaptados Regionales, S.L.U."
+  },
+  {
+    "RUTA": "M11 León - Chozas De Arriba",
+    "CONCESIÓN": "VACL-161",
+    "OPERADOR": "Autocares Castilla y León, S.A.U."
+  },
+  {
+    "RUTA": "M13 León - Meizara",
+    "CONCESIÓN": "VACL-115",
+    "OPERADOR": "Transportes Adaptados Regionales, S.L.U."
+  },
+  {
+    "RUTA": "M15 León - Ardón",
+    "CONCESIÓN": "VACL-099",
+    "OPERADOR": "Transportes Adaptados Regionales, S.L.U."
+  },
+  {
+    "RUTA": "M16 León - La Seca",
+    "CONCESIÓN": "VACL-115",
+    "OPERADOR": "Transportes Adaptados Regionales, S.L.U."
+  },
+  {
+    "RUTA": "M17 Villasinta - Villaquilambre - León",
+    "CONCESIÓN": "VACL-109",
+    "OPERADOR": "Empresa Reyero, S.L.",
+    "OBSERVACIONES": "La Ermita"
+  },
+  {
+    "RUTA": "M18 Las Lomas - León",
+    "CONCESIÓN": "VACL-100",
+    "OPERADOR": "Torobus 2030, S.L.U."
+  },
+  {
+    "RUTA": "M19 Villamayor Del Condado - León",
+    "CONCESIÓN": "VACL-100",
+    "OPERADOR": "Torobus 2030, S.L.U."
+  },
+  {
+    "RUTA": "M20 Valdesogo - Villaturiel - León",
+    "CONCESIÓN": "VACL-148",
+    "OPERADOR": "Torobus 2030, S.L.U."
+  },
+  {
+    "RUTA": "M21 Cembranos - Polígono - León",
+    "CONCESIÓN": "VACL-062",
+    "OPERADOR": "Hermanos Vivas Santander, S.A."
+  },
+  {
+    "RUTA": "M22 Villar De Mazarife - León",
+    "CONCESIÓN": "VACL-085",
+    "OPERADOR": "Autocares Franco, S.L."
+  },
+  {
+    "RUTA": "M1a-B-C-D Valdelagua - Santa Marta - Salamanca",
+    "CONCESIÓN": "VACL-002",
+    "OPERADOR": "Avanza Movilidad Integral, S. L. U."
+  },
+  {
+    "RUTA": "M1e Santa Marta - Campus - Salamanca",
+    "CONCESIÓN": "VACL-002",
+    "OPERADOR": "Avanza Movilidad Integral, S. L. U.",
+    "OBSERVACIONES": "Hospitales"
+  },
+  {
+    "RUTA": "M2a Navahonda - Carbajosa - Salamanca",
+    "CONCESIÓN": "VACL-002",
+    "OPERADOR": "Avanza Movilidad Integral, S. L. U."
+  },
+  {
+    "RUTA": "M2b Campus - Carbajosa De La Sagrada",
+    "CONCESIÓN": "VACL-002",
+    "OPERADOR": "Avanza Movilidad Integral, S. L. U."
+  },
+  {
+    "RUTA": "M2c Carbajosa - Centros Comerciales",
+    "CONCESIÓN": "VACL-002",
+    "OPERADOR": "Avanza Movilidad Integral, S. L. U."
+  },
+  {
+    "RUTA": "M3 Cabrerizos - Salamanca",
+    "CONCESIÓN": "VACL-002",
+    "OPERADOR": "Avanza Movilidad Integral, S. L. U."
+  },
+  {
+    "RUTA": "M4a Monterrubio - Villares - Salamanca",
+    "CONCESIÓN": "VACL-002",
+    "OPERADOR": "Avanza Movilidad Integral, S. L. U."
+  },
+  {
+    "RUTA": "M4b Polígono Los Villares - Villares - Salamanca",
+    "CONCESIÓN": "VACL-002",
+    "OPERADOR": "Avanza Movilidad Integral, S. L. U."
+  },
+  {
+    "RUTA": "M4c Aldeaseca - Villares - Bizarricas - Salamanca",
+    "CONCESIÓN": "VACL-002",
+    "OPERADOR": "Avanza Movilidad Integral, S. L. U."
+  },
+  {
+    "RUTA": "M5a-B Aldeaseca - Villamayor - Salamanca",
+    "CONCESIÓN": "VACL-002",
+    "OPERADOR": "Avanza Movilidad Integral, S. L. U."
+  },
+  {
+    "RUTA": "M5c Los Almendros - Salamanca",
+    "CONCESIÓN": "VACL-002",
+    "OPERADOR": "Avanza Movilidad Integral, S. L. U."
+  },
+  {
+    "RUTA": "M6a Los Montalvos - Peñasolana - Salamanca",
+    "CONCESIÓN": "VACL-002",
+    "OPERADOR": "Avanza Movilidad Integral, S. L. U."
+  },
+  {
+    "RUTA": "M7a Navahonda - Valdelagua - Salamanca",
+    "CONCESIÓN": "VACL-074",
+    "OPERADOR": "Autobuses Urbanos de Ponferrada, S.A. (AUPSA)"
+  },
+  {
+    "RUTA": "M8a Aldeatejada - Salamanca",
+    "CONCESIÓN": "VACL-076",
+    "OPERADOR": "Adojaju, S.L."
+  },
+  {
+    "RUTA": "M9a Doñinos De Salamanca - Salamanca",
+    "CONCESIÓN": "VACL-071",
+    "OPERADOR": "Empresa de Automóviles El Pilar, S.A."
+  },
+  {
+    "RUTA": "M10a Castellanos De Moriscos - Salamanca",
+    "CONCESIÓN": "VACL-021 VACL- 046",
+    "OPERADOR": "Autocares Hermanos Martín Martín, S.L. Transportes La Armuña, S.L."
+  },
+  {
+    "RUTA": "M10b Moriscos - Castellanos - Salamanca",
+    "CONCESIÓN": "VACL-021 VACL- 046",
+    "OPERADOR": "Autocares Hermanos Martín Martín, S.L. Transportes La Armuña, S.L."
+  },
+  {
+    "RUTA": "M11a Calvarrasa De Abajo - Pelabravo - Salamanca",
+    "CONCESIÓN": "VACL-078",
+    "OPERADOR": "Autocares Huerta, S.L."
+  },
+  {
+    "RUTA": "M12a Aldealengua - Salamanca",
+    "CONCESIÓN": "VACL-002",
+    "OPERADOR": "Avanza Movilidad Integral, S. L. U."
+  },
+  {
+    "RUTA": "M13a Castellanos De Villiquera - Salamanca",
+    "CONCESIÓN": "VACL-059",
+    "OPERADOR": "Avanza Movilidad Integral, S. L. U."
+  },
+  {
+    "RUTA": "M1 Garcillán - Segovia",
+    "CONCESIÓN": "VACL-125",
+    "OPERADOR": "Linecar, S.A."
+  },
+  {
+    "RUTA": "M2 Segovia - Hontanares - Los Huertos",
+    "CONCESIÓN": "VACL-122",
+    "OPERADOR": "Linecar, S.A."
+  },
+  {
+    "RUTA": "M3 Bernuy De Porreros - Segovia",
+    "CONCESIÓN": "VACL-128",
+    "OPERADOR": "Autocares Garrido, S.L."
+  },
+  {
+    "RUTA": "M4 Segovia - La Lastrilla",
+    "CONCESIÓN": "VACL-126",
+    "OPERADOR": "Linecar, S.A."
+  },
+  {
+    "RUTA": "M5 Santo Domingo De Pirón - Segovia",
+    "CONCESIÓN": "VACL-124",
+    "OPERADOR": "Linecar, S.A."
+  },
+  {
+    "RUTA": "M6 Torrecaballeros - Segovia",
+    "CONCESIÓN": "VACL-119",
+    "OPERADOR": "Linecar, S.A."
+  },
+  {
+    "RUTA": "M7 Segovia - Segovia",
+    "CONCESIÓN": "VACL-119",
+    "OPERADOR": "Linecar, S.A.",
+    "OBSERVACIONES": "por Tabanera y Palazuelos"
+  },
+  {
+    "RUTA": "M8 Valsaín - La Granja - Segovia",
+    "CONCESIÓN": "VACL-119",
+    "OPERADOR": "Linecar, S.A."
+  },
+  {
+    "RUTA": "M9 Otero De Herreros - Segovia",
+    "CONCESIÓN": "VAC-246",
+    "OPERADOR": "Avanza Movilidad Integral, S. L. U."
+  },
+  {
+    "RUTA": "M10 Fuentemilanos - Madrona - Segovia",
+    "CONCESIÓN": "VACL-041",
+    "OPERADOR": "Avanza Líneas Interurbanas, S.L."
+  },
+  {
+    "RUTA": "M1a Valladolid - Arroyo Universitaria",
+    "CONCESIÓN": "VACL-053",
+    "OPERADOR": "La Regional Vallisoletana, S.A.",
+    "OBSERVACIONES": "ruta verde"
+  },
+  {
+    "RUTA": "M1b Valladolid - Arroyo",
+    "CONCESIÓN": "VACL-053",
+    "OPERADOR": "La Regional Vallisoletana, S.A.",
+    "OBSERVACIONES": "ruta roja"
+  },
+  {
+    "RUTA": "M1c Valladolid - Arroyo",
+    "CONCESIÓN": "VACL-053",
+    "OPERADOR": "La Regional Vallisoletana, S.A.",
+    "OBSERVACIONES": "ruta azul"
+  },
+  {
+    "RUTA": "M1d Valladolid - Arroyo",
+    "CONCESIÓN": "VACL-053",
+    "OPERADOR": "La Regional Vallisoletana, S.A.",
+    "OBSERVACIONES": "búho"
+  },
+  {
+    "RUTA": "M1e Valladolid - Arroyo",
+    "CONCESIÓN": "VACL-053",
+    "OPERADOR": "La Regional Vallisoletana, S.A.",
+    "OBSERVACIONES": "Río Shopping"
+  },
+  {
+    "RUTA": "M3 Viana De Cega - Valladolid",
+    "CONCESIÓN": "VACL-057",
+    "OPERADOR": "Empresa Cabrero, S.A."
+  },
+  {
+    "RUTA": "M4a Parque Tecnológico De Boecillo - Valladolid",
+    "CONCESIÓN": "VACL-057",
+    "OPERADOR": "Empresa Cabrero, S.A.",
+    "OBSERVACIONES": "Plaza San Nicolás"
+  },
+  {
+    "RUTA": "M4b Parque Tecnológico De Boecillo - Valladolid",
+    "CONCESIÓN": "VACL-057",
+    "OPERADOR": "Empresa Cabrero, S.A.",
+    "OBSERVACIONES": "Filipinos"
+  },
+  {
+    "RUTA": "M5 Valladolid - Cabezón",
+    "CONCESIÓN": "VACL-053",
+    "OPERADOR": "La Regional Vallisoletana, S.A."
+  },
+  {
+    "RUTA": "M6 Valladolid - Cigales",
+    "CONCESIÓN": "VACL-053",
+    "OPERADOR": "La Regional Vallisoletana, S.A."
+  },
+  {
+    "RUTA": "M7 Tudela De Duero - Valladolid",
+    "CONCESIÓN": "VACL-151",
+    "OPERADOR": "Linecar, S.A."
+  },
+  {
+    "RUTA": "M12 Laguna De Duero - Valladolid",
+    "CONCESIÓN": "VACL-057",
+    "OPERADOR": "Empresa Cabrero, S.A."
+  },
+  {
+    "RUTA": "M13 Valladolid - Renedo",
+    "CONCESIÓN": "VACL-159",
+    "OPERADOR": "Autocares Discrecionales Vallisoletanos, S.L. (AUTODIVAL)"
+  },
+  {
+    "RUTA": "M14 Castronuevo De Esgueva - Valladolid",
+    "CONCESIÓN": "VACL-159",
+    "OPERADOR": "Autocares Discrecionales Vallisoletanos, S.L. (AUTODIVAL)"
+  },
+  {
+    "RUTA": "M20 Valladolid - Aeropuerto De Villanubla",
+    "CONCESIÓN": "VACL-038",
+    "OPERADOR": "Linecar, S.A."
+  },
+  {
+    "RUTA": "M28 Zaratán - Valladolid",
+    "CONCESIÓN": "VACL-156",
+    "OPERADOR": "Autocares Interbús, S.L."
+  },
+  {
+    "RUTA": "M3 Villalbilla De Burgos - Burgos",
+    "CONCESIÓN": "VACL-079",
+    "OPERADOR": "Autobuses Amaya, S.L."
+  }
+]
