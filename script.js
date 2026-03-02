@@ -32,8 +32,8 @@ function transporteApp() {
 		async init() {
 			try {
 				const [rutasRegulares, rutasMetro] = await Promise.all([
-					fetch('data/reg.json').then(respuesta => respuesta.json()),
-					fetch('data/metrop.json').then(respuesta => respuesta.json())
+					fetch('data/reg.json').then(r => r.json()),
+					fetch('data/metrop.json').then(r => r.json())
 				]);
 
 				this.datos = Array.isArray(rutasRegulares) ? rutasRegulares : [];
@@ -65,7 +65,7 @@ function transporteApp() {
 			const operadorasMetro = this.datosMetro.map(ruta => ruta.OPERADOR);
 
 			return [...new Set([...operadorasRegulares, ...operadorasMetro])]
-				.filter(operadora => operadora && operadora.trim() !== '')
+				.filter(op => op && op.trim() !== '')
 				.sort((a, b) => a.localeCompare(b, 'es'));
 		},
 
@@ -138,7 +138,7 @@ function transporteApp() {
 
 			this.sugProvincia = query.length < 1
 				? provincias.sort()
-				: provincias.filter(provincia => this.normalizar(provincia).includes(query)).sort();
+				: provincias.filter(prov => this.normalizar(prov).includes(query)).sort();
 		},
 
 		seleccionarProvincia(provincia) {
