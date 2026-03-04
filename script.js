@@ -6,6 +6,9 @@ function transporteApp() {
 		qOrigen: '',
 		qDestino: '',
 		qProvincia: '',
+		origenBusqueda: '',
+		destinoBusqueda: '',
+		provinciaBusqueda: '',
 		sugOrigen: [],
 		sugDestino: [],
 		sugProvincia: [],
@@ -80,14 +83,45 @@ function transporteApp() {
 			this.qOrigen = '';
 			this.qDestino = '';
 			this.qProvincia = '';
+			this.origenBusqueda = '';
+			this.destinoBusqueda = '';
+			this.provinciaBusqueda = '';
 			this.sugOrigen = [];
 			this.sugDestino = [];
 			this.sugProvincia = [];
 			this.selectedIndex = -1;
 		},
 
+		limpiarCampo(tipo) {
+			this.selectedIndex = -1;
+
+			if (tipo === 'origen') {
+				this.qOrigen = '';
+				this.qDestino = '';
+				this.sugOrigen = [];
+				this.sugDestino = [];
+				return;
+			}
+
+			if (tipo === 'destino') {
+				this.qDestino = '';
+				this.sugDestino = [];
+				return;
+			}
+
+			if (tipo === 'provincia') {
+				this.qProvincia = '';
+				this.sugProvincia = [];
+			}
+		},
+
 		buscarSugerencias(tipo) {
 			this.selectedIndex = -1;
+			if (tipo === 'origen') {
+				this.sugDestino = [];
+			} else {
+				this.sugOrigen = [];
+			}
 			const query = this.normalizar(tipo === 'origen' ? this.qOrigen : this.qDestino);
 
 			let puntosDisponibles = [];
@@ -143,6 +177,7 @@ function transporteApp() {
 
 		seleccionarProvincia(provincia) {
 			this.qProvincia = provincia;
+			this.provinciaBusqueda = provincia;
 			this.sugProvincia = [];
 			this.selectedIndex = -1;
 		},
@@ -189,6 +224,7 @@ function transporteApp() {
 				this.qOrigen = valor;
 				this.sugOrigen = [];
 				this.qDestino = '';
+				this.sugDestino = [];
 				this.selectedIndex = -1;
 
 				this.$nextTick(() => {
@@ -200,15 +236,17 @@ function transporteApp() {
 			}
 
 			this.qDestino = valor;
+			this.origenBusqueda = this.qOrigen;
+			this.destinoBusqueda = valor;
 			this.sugDestino = [];
 			this.selectedIndex = -1;
 		},
 
 		get filtrarRegulares() {
-			if (!this.qOrigen || !this.qDestino || this.datos.length === 0) return [];
+			if (!this.origenBusqueda || !this.destinoBusqueda || this.datos.length === 0) return [];
 
-			const origenBuscado = this.normalizar(this.qOrigen);
-			const destinoBuscado = this.normalizar(this.qDestino);
+			const origenBuscado = this.normalizar(this.origenBusqueda);
+			const destinoBuscado = this.normalizar(this.destinoBusqueda);
 
 			return this.datos
 				.filter(ruta => {
@@ -231,9 +269,9 @@ function transporteApp() {
 		},
 
 		get filtrarMetro() {
-			if (!this.qProvincia || this.datosMetro.length === 0) return [];
+			if (!this.provinciaBusqueda || this.datosMetro.length === 0) return [];
 
-			const provinciaBuscada = this.normalizar(this.qProvincia);
+			const provinciaBuscada = this.normalizar(this.provinciaBusqueda);
 			return this.datosMetro.filter(ruta => ruta.PROVINCIA && this.normalizar(ruta.PROVINCIA) === provinciaBuscada);
 		}
 	};

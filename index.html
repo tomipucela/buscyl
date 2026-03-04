@@ -54,7 +54,7 @@
             <div class="relative">
                 <label class="block text-xs font-black text-red-600 uppercase tracking-widest mb-2 ml-2">Origen</label>
                 <input type="text" x-model="qOrigen" 
-                    @focus="buscarSugerencias('origen')"
+                    @focus="limpiarCampo('origen'); buscarSugerencias('origen')"
                     @input="buscarSugerencias('origen')"
                     @keydown.arrow-down.prevent="navIndex('origen', 1)"
                     @keydown.arrow-up.prevent="navIndex('origen', -1)"
@@ -75,7 +75,7 @@
             <div class="relative">
                 <label class="block text-xs font-black text-red-600 uppercase tracking-widest mb-2 ml-2">Destino</label>
                 <input type="text" x-model="qDestino" x-ref="inputDestino"
-                    @focus="buscarSugerencias('destino')"
+                    @focus="limpiarCampo('destino'); buscarSugerencias('destino')"
                     @input="buscarSugerencias('destino')" 
                     @keydown.arrow-down.prevent="navIndex('destino', 1)"
                     @keydown.arrow-up.prevent="navIndex('destino', -1)"
@@ -101,7 +101,7 @@
             <div class="flex flex-col lg:flex-row gap-10 items-start">
                 <div class="flex-1">
                     <h2 class="text-4xl font-extrabold text-slate-800 mb-4 leading-tight tracking-tighter" 
-                        x-text="qOrigen.toUpperCase() + ' ➔ ' + qDestino.toUpperCase()"></h2>
+                        x-text="origenBusqueda.toUpperCase() + ' ➔ ' + destinoBusqueda.toUpperCase()"></h2>
                     
                     <div class="flex items-center gap-3 py-3 px-5 bg-slate-50 rounded-2xl inline-flex border border-slate-100">
                         <div class="w-2 h-2 rounded-full bg-red-600 animate-pulse"></div>
@@ -151,7 +151,7 @@
         <div class="max-w-md mx-auto mb-12 relative">
             <label class="block text-center text-xs font-black text-red-600 uppercase tracking-widest mb-4">Provincia</label>
             <input type="text" x-model="qProvincia" 
-                @focus="buscarProvincia()"
+                @focus="limpiarCampo('provincia'); buscarProvincia()"
                 @input="buscarProvincia()" 
                 @keydown.arrow-down.prevent="navIndex('provincia', 1)"
                 @keydown.arrow-up.prevent="navIndex('provincia', -1)"

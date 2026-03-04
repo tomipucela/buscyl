@@ -196,13 +196,6 @@
     "TIPO": "Regular"
   },
   {
-    "ORIGEN": "Ávila",
-    "DESTINO": "Ávila",
-    "CONCESIÓN": "VACL-013",
-    "OPERADOR": "Autobuses Hermanos Rodríguez, S.A.",
-    "TIPO": "Regular"
-  },
-  {
     "ORIGEN": "Aldea Del Rey Niño",
     "DESTINO": "Ávila",
     "CONCESIÓN": "VACL-013",
@@ -5231,13 +5224,6 @@
   },
   {
     "ORIGEN": "Benavente",
-    "DESTINO": "Ávila",
-    "CONCESIÓN": "VACL-038",
-    "OPERADOR": "Linecar, S.A.",
-    "TIPO": "Regular"
-  },
-  {
-    "ORIGEN": "Valladolid",
     "DESTINO": "Ávila",
     "CONCESIÓN": "VACL-038",
     "OPERADOR": "Linecar, S.A.",
@@ -18043,7 +18029,7 @@
     "TIPO": "Regular"
   },
   {
-    "ORIGEN": "Avila",
+    "ORIGEN": "Ávila",
     "DESTINO": "Salamanca",
     "CONCESIÓN": "VACL-052",
     "OPERADOR": "Auto Res  SL",
